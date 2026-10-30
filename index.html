@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="جولة تعريفية بمحطة تنقية سد خليص: أرقام الإنتاج والطاقة والتصدير ووحدات المعالجة">
+<meta name="theme-color" content="#0b3a5c">
+<title>محطة إنتاج المياه</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+/* لون الخلفية: --bg و --bg2 (تم تفتيحهم ~15%، القديم كان #062a44 و #0a3d5f) */
+:root{--bg:#0b3a5c;--bg2:#145079;--fg:#eaf6ff;--mut:#a9cde3;--acc:#17b3a3;--glass:rgba(255,255,255,.08);--sz:clamp(84px,17svh,140px);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-snap-type:y mandatory;scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,var(--bg),var(--bg2) 50%,var(--bg))}
+body{color:var(--fg);font-family:'Tajawal',Tahoma,Arial,sans-serif}
+#pg{position:fixed;top:env(safe-area-inset-top,0px);right:0;height:3px;width:0;background:var(--acc);z-index:5;box-shadow:0 0 10px var(--acc)}
+#nv{position:fixed;left:4px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:1px;z-index:5}
+#nv b{display:block;padding:4px;cursor:pointer}
+#nv b::before{content:'';display:block;width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.3);transition:.3s}
+#nv b:hover::before{background:rgba(255,255,255,.6)}
+#nv b.a::before{background:var(--acc);height:20px;border-radius:4px;box-shadow:0 0 10px var(--acc)}
+.sl{position:relative;z-index:1;min-height:100svh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:26px 28px 26px 22px;background:radial-gradient(circle at 85% 8%,color-mix(in srgb,var(--acc) 24%,transparent),transparent 55%)}
+h1{font-size:34px;font-weight:800;line-height:1.3}
+h2{font-size:26px;font-weight:800;line-height:1.3}
+.sub{color:var(--mut);font-size:17px;margin-top:4px}
+.ttl{display:inline-block;font-size:26px;font-weight:800;border-bottom:3px solid var(--acc);padding-bottom:6px;align-self:flex-start}
+.it{display:flex;align-items:center}
+.it.alt{flex-direction:row-reverse}
+.img{flex:0 0 var(--sz);height:var(--sz);border-radius:20px;border:2px solid color-mix(in srgb,var(--acc) 70%,transparent);background:var(--glass);box-shadow:0 10px 30px rgba(0,0,0,.4),0 0 24px color-mix(in srgb,var(--acc) 35%,transparent);display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:14px;overflow:hidden;opacity:0;transform:scale(.4) rotate(-8deg);transition:opacity .5s,transform .8s cubic-bezier(.34,1.56,.64,1);transition-delay:var(--d,0s)}
+.img img{width:100%;height:100%;object-fit:cover}
+.pic{width:100%;height:clamp(120px,22svh,220px);border-radius:20px;border:2px solid color-mix(in srgb,var(--acc) 70%,transparent);background:var(--glass);box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 22px color-mix(in srgb,var(--acc) 30%,transparent);display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:14px;overflow:hidden;opacity:0;transform:translateY(-26px) scale(.96);transition:opacity .6s,transform .8s cubic-bezier(.34,1.3,.64,1)}
+.pic img{width:100%;height:100%;object-fit:cover}
+.big{display:flex;flex-direction:column;gap:18px}
+.gr{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;width:100%;max-width:980px;margin-inline:auto}
+.tile{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:12px;text-align:center;border-radius:20px;background:var(--glass);border:1.5px solid color-mix(in srgb,var(--acc) 60%,transparent);box-shadow:0 6px 16px rgba(0,0,0,.3);opacity:0;transform:translateY(22px);transition:.6s ease;transition-delay:var(--d,0s)}
+.tile.on{opacity:1;transform:none}
+.tile svg{width:34%;max-width:60px;color:var(--acc)}
+.tile .tt{font-size:14px;font-weight:700;line-height:1.35}
+.tile .v{display:flex;flex-direction:column;align-items:center}
+.tile .n,.tile .t{font-size:26px;font-weight:800;color:var(--acc);line-height:1.15}
+.tile .v small{font-size:13px;color:var(--mut);unicode-bidi:plaintext}
+.gr{grid-template-columns:repeat(2,minmax(0,1fr))}.tile{min-width:0}
+body{overflow-x:clip}
+@media(min-width:760px){.gr{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.tile .tt{font-size:17px}.tile .n,.tile .t{font-size:32px}.tile .v small{font-size:15px}}
+.ul{display:inline-block;border-bottom:3px solid var(--acc);padding-bottom:6px}
+.big .pic{height:min(38svh,320px)}
+.txt{opacity:0;transform:translateY(22px);transition:.7s ease;transition-delay:var(--d,0s)}
+.pic.on,.txt.on{opacity:1;transform:none}
+.cn{position:relative;flex:0 0 clamp(36px,13vw,90px);height:var(--sz)}
+.alt .cn{transform:scaleX(-1)}
+.cn svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;clip-path:inset(0 0 0 100%);transition:clip-path .7s ease;transition-delay:calc(var(--d,0s) + .45s)}
+.cn path{fill:none;stroke:var(--acc);stroke-width:2.5;vector-effect:non-scaling-stroke}
+.cn i{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 12px var(--acc);transform:translate(-50%,-50%) scale(0);transition:transform .4s;transition-delay:calc(var(--d,0s) + .4s)}
+.cn .d1{right:0;top:25%;transform:translate(50%,-50%) scale(0)}
+.cn .d2{left:0;top:50%;transition-delay:calc(var(--d,0s) + 1s)}
+.lb{flex:1;background:var(--glass);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:12px 16px;opacity:0;transform:translateX(60px);transition:.7s ease;transition-delay:calc(var(--d,0s) + .5s)}
+.lb b{font-size:19px;display:block}.lb small{display:block;color:var(--mut);font-size:15px;margin-top:2px}
+.lb .num{font-size:34px;color:var(--acc);font-weight:800;line-height:1}
+.on .img{opacity:1;transform:none}
+.on .cn svg{clip-path:inset(0)}
+.on .cn .d1{transform:translate(50%,-50%) scale(1)}.on .cn .d2{transform:translate(-50%,-50%) scale(1)}
+.on .lb{opacity:1;transform:none}
+.grp{display:flex;flex-direction:column;gap:6px}
+.grp h3{font-size:18px;color:var(--acc)}
+.row{display:flex;align-items:baseline;justify-content:space-between;background:var(--glass);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:6px 16px;opacity:0;transform:translateY(22px);transition:.7s ease;transition-delay:var(--d)}
+.row.on{opacity:1;transform:none}
+.row .l{color:var(--mut);font-size:16px}
+.n{font-weight:800;font-variant-numeric:tabular-nums}
+.t{font-weight:800;font-size:22px;}
+.u{font-size:14px;color:var(--mut);margin-inline-start:6px}
+.row .n, .row .t{font-size:28px}
+.r0 .n, .r0 .t{font-size:44px;color:var(--acc);text-shadow:0 0 22px color-mix(in srgb,var(--acc) 55%,transparent)}
+.two{display:grid;gap:12px}
+.tbs{background:var(--glass);border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden}
+.tbh{display:flex;justify-content:space-between;background:color-mix(in srgb,var(--acc) 30%,transparent);padding:8px 14px;font-weight:800;font-size:16px}
+.tbr{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 14px;border-top:1px solid rgba(255,255,255,.08)}
+.tbr b{display:block;font-size:17px}
+.tbr small{display:block;color:var(--mut);font-size:15px}
+.tbr em{font-style:normal;font-weight:800;font-size:22px;color:var(--acc);min-width:28px;text-align:center}
+.tbs{opacity:0}
+.tbs.on{opacity:1;animation:tin .6s ease both;animation-delay:var(--d)}
+@keyframes tin{from{opacity:0;transform:translateY(22px)}}
+.cards{display:flex;flex-direction:column;gap:14px}
+@media(max-width:759px){.lb{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(255,255,255,.12)}.img{box-shadow:0 6px 16px rgba(0,0,0,.35)}}
+@media(min-width:760px){.sl{padding:40px 14vw}.two{grid-template-columns:1fr 1fr}}
+#logo{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:14px;height:58px;width:auto;max-width:46vw;object-fit:contain;z-index:6;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+.sl{padding-top:84px}
+@media(min-width:760px){#logo{height:84px;top:16px;right:24px}.sl{padding-top:116px}}
+.sl:last-of-type{align-items:center;text-align:center}
+.sl:last-of-type .big{align-items:center}
+.sl:last-of-type h1{font-size:38px}
+
+/* ===================== إضافات جديدة ===================== */
+/* فقاعات تطفو في الخلفية */
+#fx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+#fx span{position:absolute;bottom:-60px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.32),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1);animation:rise linear infinite}
+@keyframes rise{to{transform:translate(var(--x),-120vh)}}
+/* موجة أسفل شريحة الترحيب + سهم النزول */
+.wave{position:absolute;left:0;right:0;bottom:0;height:110px;overflow:hidden;pointer-events:none;z-index:-1}
+.wave svg{position:absolute;bottom:0;left:0;width:200%;height:100%;animation:wv 14s linear infinite}
+.wave svg+svg{animation-duration:22s;animation-direction:reverse;opacity:.6}
+.wave path{fill:color-mix(in srgb,var(--acc) 22%,transparent)}
+@keyframes wv{to{transform:translateX(-50%)}}
+.down{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--mut);font-size:13px;animation:bob 2s ease-in-out infinite}
+.down svg{width:22px;height:22px}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+/* شارة الفترة / آخر تحديث */
+.chip{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;background:var(--glass);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:5px 14px;font-size:14px;color:var(--mut);opacity:0;transform:translateY(10px);transition:.6s ease .2s}
+.chip.on{opacity:1;transform:none}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 0 var(--acc);animation:ping 2s infinite}
+.chip.demo i{background:#f2b84b;animation:none}
+@keyframes ping{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.gr+.chip,.tmeta{align-self:center}
+.prog{width:100%;opacity:0;transition:.6s ease .3s}
+.prog.on{opacity:1}
+.prog .bar{height:8px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden}
+.prog .bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#2a9ad6,var(--acc));transition:width 1.6s cubic-bezier(.2,.8,.2,1) .4s}
+.prog.on .bar i{width:var(--w)}
+.prog small{display:flex;justify-content:space-between;color:var(--mut);font-size:13px;margin-top:5px}
+/* جدول السجل السنوي (بطاقات في الجوال، جدول في الكمبيوتر) */
+.yt{display:flex;flex-direction:column;gap:10px;width:100%}
+.yh{display:none}
+.yr{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;background:var(--glass);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:12px 16px;opacity:0;transform:translateY(22px);transition:.7s ease;transition-delay:var(--d)}
+.yr.on{opacity:1;transform:none}
+.yy{grid-column:1/-1;font-size:26px;font-weight:800;color:var(--acc);display:flex;align-items:center;gap:8px;text-shadow:0 0 18px color-mix(in srgb,var(--acc) 50%,transparent)}
+.yy em{font-style:normal;font-size:12px;font-weight:700;color:#ffe2a6;background:rgba(242,184,75,.18);border-radius:99px;padding:2px 8px;text-shadow:none}
+.yc{position:relative;display:flex;flex-direction:column;padding-bottom:8px;min-width:0}
+.yc::before{content:attr(data-l);font-size:12.5px;color:var(--mut)}
+.yc .n{font-size:20px;line-height:1.3}
+.yc i{font-style:normal;font-size:12px;font-weight:700}
+.yc i.up{color:#6ee7b7}.yc i.dn{color:#fca5a5}
+.yc u{position:absolute;bottom:0;right:0;height:3px;width:0;border-radius:2px;background:linear-gradient(270deg,var(--acc),transparent);transition:width 1.4s cubic-bezier(.2,.8,.2,1) .5s}
+.yr.on .yc u{width:var(--w)}
+.yempty{color:var(--mut);background:var(--glass);border:1px dashed rgba(255,255,255,.2);border-radius:18px;padding:22px;text-align:center}
+@media(min-width:760px){
+ .yh{display:grid;grid-template-columns:120px repeat(4,1fr);gap:14px;padding:0 16px;color:var(--mut);font-size:14px;font-weight:700}
+ .yh small{display:block;font-weight:400;font-size:12px}
+ .yr{grid-template-columns:120px repeat(4,1fr);align-items:center;padding:14px 16px}
+ .yy{grid-column:auto}
+ .yc::before{display:none}
+ .yc .n{font-size:24px}
+ .tile{transition:.6s ease,box-shadow .3s,border-color .3s}
+ .tile.on:hover{box-shadow:0 10px 28px rgba(0,0,0,.35),0 0 26px color-mix(in srgb,var(--acc) 40%,transparent);border-color:var(--acc)}
+}
+/* شاشة التحميل */
+#ld{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:var(--bg);transition:opacity .5s}
+#ld.out{opacity:0;pointer-events:none}
+#ld svg{width:46px;height:46px;color:var(--acc);animation:drip 1.2s ease-in-out infinite}
+@keyframes drip{50%{transform:translateY(8px) scale(.9);opacity:.6}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.img,.lb,.row,.tbs,.pic,.txt,.tile,.yr,.chip,.prog{opacity:1;transform:none}.cn svg{clip-path:none}.cn i{transform:translate(-50%,-50%)}#fx{display:none}.prog .bar i{width:var(--w)}.yc u{width:var(--w)}}
+</style>
+</head>
+<body>
+<div id="ld" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5S5 10 5 15a7 7 0 0 0 14 0c0-5-7-12.5-7-12.5z"/></svg></div>
+<div id="fx" aria-hidden="true"></div>
+<div id="pg"></div><div id="nv"></div>
+<img id="logo" src="img/picc1.png" alt="الهيئة السعودية للمياه" onerror="this.style.display='none'">
+<main id="m"></main>
+<script src="js/config.js"></script>
+<script src="js/core.js"></script>
+<script>
+(async function () {
+/* ===== البيانات الحيّة: تُقرأ من لوحة الإدخال وتُحسب تلقائياً =====
+   C = السنة الحالية (السنوي، المتوسط الشهري، المتوسط اليومي ...)
+   HIST = السنوات المكتملة للجدول السنوي */
+const D = await Core.loadPublic();
+const R = Core.round;
+const C = (D && D.current) || Core.stats({ yr: new Date().getFullYear(), days: 0 });
+const HIST = D ? D.history : [];
+const PERIOD = C.last_date ? `سنة ${C.yr} · حتى ${Core.dateAr(C.last_date)}` : `سنة ${C.yr}`;
+
+/* ألوان الهوية: غيّرها من هنا (--bg و--acc في الأعلى، و a: لكل شريحة) */
+/* لإضافة صورة: ضع رابط/بيانات الصورة في الحقل img لكل عنصر */
+const S=[
+/* ===== الشريحة 1: الترحيب ===== */
+{a:'#17b3a3',k:'t',
+ h:'تنقية سد خليص',
+ s:' جولة تعريفية بأرقام المحطة ومحتوياتها',
+ img:'img/pic11.png'},   /* <-- صورة الشريحة 1 (ملاحظة: pic11.png غير موجودة في مجلد img) */
+
+/* ===== شريحة السجل السنوي (تلقائية) =====
+   كل سنة تنتهي تنزل هنا تلقائياً بالترتيب: الإنتاج، الطاقة، الكيماويات، التصدير */
+{a:'#17b3a3',k:'y',h:'السجل السنوي',s:'إجمالي كل سنة مكتملة',rows:HIST},
+
+ /* ===== شريحة المؤشرات (مربعات) =====
+   لإضافة مؤشر جديد: انسخ سطراً واحداً والصقه تحته. شكل السطر:
+   ['الأيقونة','اسم المؤشر', الرقم, 'وحدة القياس'],
+   مثال:  ['bolt','استهلاك الطاقة لكل متر مكعب', 0.62, 'kWh / م³'],
+   - الرقم بدون علامات اقتباس (ويتحرك عدّاد عند الظهور). لو القيمة نص اكتبها بين علامتين: 'مطابقة'
+   - الأرقام اللي تبدأ بـ C. تتحسب تلقائياً من القراءات اليومية
+   - الرقم والوحدة اختياريان: لو تركتهما يظهر المربع بالأيقونة والاسم فقط.
+   الأيقونات المتاحة: bolt (طاقة) · flask (كيميائيات) · drop (مياه) · tank (تخزين) · flow (تدفق)
+                      gauge (مقياس) · chart (إحصاء) · factory (محطة) · clock (وقت) · leaf (بيئة) · shield (جودة) */
+{a:'#17b3a3',k:'g',h:'مؤشرات الأداء',live:1,
+ g:[
+  ['bolt','استهلاك الطاقة لكل متر مكعب',R(C.energy_per_m3,3),'kWh/m³'],
+  ['flask','استهلاك المواد الكيميائية لكل متر مكعب',R(C.chem_per_m3,4),'Kg/m³'],
+  ['tank','السعة التخزينية',40000,'m³'],
+  ['flow','متوسط الإنتاج اليومي',R(C.daily.production),'m³/يوم'],
+  /*['shield','جودة المياه'],
+  ['gauge','كفاءة التشغيل'],*/
+ ]},
+
+/* ===== الشريحة 2التعريفية الإنتاج =====
+   الوحدة العامة للشريحة هي s:'م³'. ولتغيير وحدة سطر واحد فقط أضف وحدة ثالثة داخل السطر، مثال:
+   ['ارتفاع السد',101,'م']  */
+{a:'#17b3a3',k:'s',h:'نبذة عن سد خليص',s:'',
+ img:'img/pic11.png',    /* <-- صورة الشريحة 2 */
+ g:[{r:[['تأسس عام',1426,'هجري', 'بدون'],['السعة التخزينية',183.6, 'مليون م³'],['يبلغ ارتفاعه',101,'متر'],['يبلغ طوله',580,'متر'],['الجهة المسؤولة','وزارة الري']]}]},
+
+
+/* ===== الشريحة 2التعريفية الإنتاج =====
+   الوحدة العامة للشريحة هي s:'م³'. ولتغيير وحدة سطر واحد فقط أضف وحدة ثالثة داخل السطر، مثال:
+   ['ارتفاع السد',101,'م']  */
+{a:'#17b3a3',k:'s',h:'نبذة عن تنقية سد خليص',s:'',
+ img:'img/pic12.png',    /* <-- صورة الشريحة 2 */
+ g:[{r:[['تأسس عام',1426,'هجري','بدون'],['السعة التخزينية',40000, 'م³'],['مساحة المنشأة',2600,'م²'],['المدن المخدومة','خليص والكامل']]}]},
+
+
+
+/* ===== الشريحة 2: الإنتاج (تلقائية) ===== */
+{a:'#17b3a3',k:'s',h:'كميات المياه المنتجة',s:'م³',per:1,prog:1,
+ img:'',    /* بدون صورة */
+ g:[{r:[['السنوي',R(C.production)],['المتوسط الشهري',R(C.monthly.production)],['المتوسط اليومي',R(C.daily.production)]]}]},
+
+/* ===== الشريحة 3: الكفاءة التشغيلية (تلقائية) ===== */
+{a:'#7ac143',k:'s',h:'الكفاءة التشغيلية',s:'',two:1,per:1,
+ img:'',    /* <-- صورة الشريحة 5 */
+ g:[{h:'استهلاك الطاقة',r:[['السنوي',R(C.energy),' kWh'],['المتوسط الشهري',R(C.monthly.energy),' kWh'],['المتوسط اليومي',R(C.daily.energy),' kWh']]},
+    {h:'استهلاك المواد الكيميائية',r:[['السنوي',R(C.chemicals),' kg'],['المتوسط الشهري',R(C.monthly.chemicals),' kg'],['المتوسط اليومي',R(C.daily.chemicals),' kg']]}]},
+
+
+/* ===== الشريحة 5: التصدير (تلقائية) ===== */
+{a:'#2a9ad6',k:'s',h:'التصدير',s:'م³',two:1,per:1,
+ img:'',    /* <-- صورة الشريحة 5 */
+ g:[{h:'التصدير إلى خليص',r:[['السنوي',R(C.export_khulais)],['المتوسط الشهري',R(C.monthly.export_khulais)],['المتوسط اليومي',R(C.daily.export_khulais)]]},
+    {h:'التصدير إلى الكامل',r:[['السنوي',R(C.export_kamil)],['المتوسط الشهري',R(C.monthly.export_kamil)],['المتوسط اليومي',R(C.daily.export_kamil)]]}]},
+
+/* ===== الشريحة 6: فاصل محتويات المحطة ===== */
+{a:'#17b3a3',k:'t',
+ h:'عملية معالجة المياه',
+ s:'تعرف على عملية معالجة المياه بشكل مختصر',
+ img:''},   /* <-- صورة الشريحة 6 */
+
+/* ===== الشريحة 7: وحدات المعالجة (كل عنصر: [الرقم, الاسم, نص صغير, الصورة]) ===== */
+{a:'#17b3a3',k:'c',h:'وحدات المعالجة',c:[
+[1,'مضخات السحب ','لنقل المياه من البحيرة الى عملية المعالجة الاولية','img/pic7.png'],
+[2,'الشلال المتدرج','لتهوية المياه وتحسين الدفق','img/pic4.png'] ,
+[3,'غرفة الحقن','لحقن المواد الكميائية للمعالجة الاولية','img/pic8.png'],
+ [4,'المروقات','لإزالة العوالق بعد التخثير','img/pic5.png'],
+ [5,'الفلاتر الرملية','لترشيح المياه ','img/pic6.png'],
+[6,'خط النقل لخزان الانتاج','يتم الحقن النهائي للكلور لتعقيم المياه','img/pic9.png'],
+[7,'خزان المياه المنتجة','جاهزية المياه للتصدير إلى المدن المخدومة ','img/pic10.png']
+]},
+
+/* ===== الشريحة 6: فاصل محتويات المحطة ===== */
+{a:'#17b3a3',k:'t',
+ h:'محتويات المحطة',
+ s:'تعرّف على وحدات المحطة',
+ img:''},   /* <-- صورة الشريحة 6 */
+
+ {a:'#17b3a3',k:'tb',h:'محتويات المحطة',sec:[
+ {h:'وحدات المعالجة',r:[
+  ['الشلال المتدرج','تهوية المياه وتحسين التدفق',1],
+  ['المروقات','ترسيب المواد العالقة',2],
+  ['الفلاتر الرملية','ترشيح المياه',11]
+ ]},
+ {h:'الجرعات الكميائية والتعقيم',r:[
+  ['خزانات الشبة','تخزين وتجهيز مادة التخثير',2],
+  ['مضخات جرعات الشبة','حقن الشبة بالجرعات التشغيلية',2],
+  ['منظومة الكلور','غرفة اسطوانات ومضخات للحقن الاولى والنهائي',2]
+ ]},
+ {h:'الضخ والتصدير',r:[
+  ['مضخات سحب البحيرة','لنقل المياه من البحيرة الى مرحلة المعالجة',3],
+  ['مضخات التصدير للكامل','لنقل المياه المنتجة الى مدينة الكامل',3],
+  ['التصدير الى خليص','يتم عبر الحركة الجاذبية دون استخدام مضخات',1]
+ ]},
+ {h:'السلامة والخدمات المساندة',r:[
+  ['منظومة مكافحة الحريق','مضخات الحريق وشبكة الاطفاء',2],
+  ['الخدمات التشغيلية','مضخات خدمات المباني و الزراعة',4],
+  ['التحكم وجودة المياه','غرفة التحكم DCS والمختبر الكميائي',2]
+ ]},
+ {h:'منظومة الطاقة الكهربائية ',r:[
+  ['محولات التغذية الرئيسية','لتغذية كافة ملحقات المنشأة بالطاقة',3],
+  ['مولدات الطوارئ','لضمان استمرار العمليات التشغيلية',3],
+  ['غرف لوحات التوزيع والحماية','لاستمرارية التغذية التشغيلية',5]
+ ]}
+
+]},
+
+{a:'#17b3a3',k:'t',
+ h:'من المصدر إلى المستفيد',
+ s:'مياه آمنة بجودة واستدامة تشغيلية',
+ img:''},
+];
+
+const dc=v=>(String(v).split('.')[1]||'').length;
+const f=(n,d=0)=>n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+const IC={
+bolt:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+flask:'<path d="M9 2h6M10 2v6L4 19a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-6-11V2"/><path d="M7 15h10"/>',
+drop:'<path d="M12 2.5S5 10 5 15a7 7 0 0 0 14 0c0-5-7-12.5-7-12.5z"/>',
+tank:'<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
+flow:'<path d="M2 9c2.5-3 5-3 7.5 0s5 3 7.5 0 3-2 5-1M2 16c2.5-3 5-3 7.5 0s5 3 7.5 0 3-2 5-1"/>',
+gauge:'<path d="M4 18a9 9 0 1 1 16 0"/><path d="M12 14l4-5"/><circle cx="12" cy="15" r="1.5"/>',
+chart:'<path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/>',
+factory:'<path d="M3 21V10l6 4v-4l6 4V5h3v16z"/>',
+clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+leaf:'<path d="M20 4C9 4 4 9 4 15a5 5 0 0 0 5 5c6 0 11-5 11-16z"/><path d="M4 20c3-6 6-8 10-10"/>',
+shield:'<path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/>'};
+const P=x=>x?`<img src="${x}" alt="" onerror="this.outerHTML='<span>صورة</span>'">`:'<span>صورة</span>';
+const CN='<div class="cn"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M100,25 L66,25 L46,50 L0,50"/></svg><i class="d1"></i><i class="d2"></i></div>';
+const it=(i,img,lb,d)=>`<div class="it ${i%2?'alt':''}" style="--d:${d}s"><div class="img">${P(img)}</div>${CN}<div class="lb">${lb}</div></div>`;
+
+/* شارات البيانات الحية */
+const CHIP=()=>D&&D.isDemo?'<div class="chip demo"><i></i>بيانات تجريبية</div>'
+  :D?`<div class="chip"><i></i>${D.stale?'آخر بيانات متاحة':'محدّث'} · ${Core.dateAr(D.lastDate)}</div>`
+  :'<div class="chip demo"><i></i>تعذّر تحميل البيانات</div>';
+const PER=()=>`<div class="chip"><i></i>${PERIOD}</div>`;
+const PROG=()=>`<div class="prog" style="--w:${Math.min(100,C.days/C.diy*100).toFixed(1)}%"><div class="bar"><i></i></div><small><span>مضى ${C.days} يوم من ${C.diy}</span><span>${Math.round(C.days/C.diy*100)}%</span></small></div>`;
+/* جدول السنوات */
+const YC=[['production','الإنتاج','م³'],['energy','استهلاك الطاقة','kWh'],['chemicals','المواد الكيميائية','kg'],['export_total','التصدير','م³']];
+function yearTable(x){
+  if(!x.rows.length) return '<div class="yempty txt" style="--d:.2s">ستظهر هنا السنوات المكتملة تلقائياً</div>';
+  const mx={};YC.forEach(c=>mx[c[0]]=Math.max(1,...x.rows.map(r=>r[c[0]])));
+  return `<div class="yt"><div class="yh"><span>السنة</span>${YC.map(c=>`<span>${c[1]}<small>${c[2]}</small></span>`).join('')}</div>`+
+  x.rows.map((r,i)=>{const p=x.rows[i-1];return `<div class="yr" style="--d:${(.1+i*.12).toFixed(2)}s"><b class="yy">${r.yr}${r.complete?'':'<em>غير مكتملة</em>'}</b>`+
+   YC.map(c=>{const v=Math.round(r[c[0]]),ch=p&&p[c[0]]?(r[c[0]]/p[c[0]]-1)*100:null;
+    return `<span class="yc" data-l="${c[1]} (${c[2]})"><span class="n" data-v="${v}">0</span>${ch!==null?`<i class="${ch>=0?'up':'dn'}">${ch>=0?'▲':'▼'} ${Math.abs(ch).toFixed(1)}%</i>`:''}<u style="--w:${(r[c[0]]/mx[c[0]]*100).toFixed(1)}%"></u></span>`}).join('')+'</div>'}).join('')+'</div>';
+}
+
+const WAVE='<div class="wave" aria-hidden="true">'+[0,1].map(()=>'<svg viewBox="0 0 2400 100" preserveAspectRatio="none"><path d="M0 55 Q150 25 300 55 T600 55 T900 55 T1200 55 T1500 55 T1800 55 T2100 55 T2400 55 V100 H0Z"/></svg>').join('')+'</div><div class="down" aria-hidden="true">اسحب للأسفل<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>';
+
+const m=document.getElementById('m');
+m.innerHTML=S.map((x,si)=>{let b;
+if(x.k=='t')b=`<div class="big">${x.img?`<div class="pic">${P(x.img)}</div>`:''}<div class="txt" style="--d:.2s"><h1 class="ul">${x.h}</h1><p class="sub">${x.s}</p></div></div>${si===0?WAVE:''}`;
+else if(x.k=='y')b=`<div class="txt" style="--d:.1s"><h2 class="ttl">${x.h}</h2><p class="sub">${x.s}</p></div>`+yearTable(x);
+else if(x.k=='g')b=`<div class="txt" style="--d:.1s"><h2 class="ttl">${x.h}</h2></div><div class="gr">`+x.g.map((r,i)=>`<div class="tile" style="--d:${.1+i*.08}s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${IC[r[0]]||IC.chart}</svg><span class="tt">${r[1]}</span>${r[2]!==undefined?`<div class="v"><span class="${typeof r[2]=='number'?'n':'t'}" data-v="${r[2]}">${typeof r[2]=='number'?0:r[2]}</span>${r[3]?`<small>${r[3]}</small>`:''}</div>`:''}</div>`).join('')+'</div>'+(x.live?CHIP():'');
+else if(x.k=='tb')b=`<h2 class="ttl">${x.h}</h2>`+x.sec.map((g,i)=>`<div class="tbs" style="--d:.1s"><div class="tbh"><span>${g.h}</span><span>العدد</span></div>`+g.r.map(r=>`<div class="tbr"><div><b>${r[0]}</b><small>${r[1]}</small></div><em>${r[2]}</em></div>`).join('')+'</div>').join('');
+else if(x.k=='s')b=(x.img?`<div class="pic">${P(x.img)}</div>`:'')+`<div class="txt" style="--d:.15s"><h2 class="ttl">${x.h}</h2>${x.s?`<p class="sub">الوحدة: ${x.s}</p>`:''}</div>`+(x.per?PER():'')+`<div class="${x.two?'two':''}">`+x.g.map(g=>`<div class="grp">${g.h?`<h3>${g.h}</h3>`:''}`+g.r.map((r,i)=>`<div class="row r${i}" style="--d:${.1+i*.15}s"><span class="l">${r[0]}</span> <span>  <span class="${typeof r[1]=='number'?'n':'t'}" data-v="${r[1]}" data-raw="${r[3]|| ''}">${typeof r[1]=='number'?0:r[1]}</span><span class="u">${typeof r[1]=='number'?(r[2]||x.s):''}</span></span></div>`).join('')+'</div>').join('')+'</div>'+(x.prog?PROG():'');
+else b=`<h2 class="ttl">${x.h}</h2><div class="cards">`+x.c.map((c,i)=>it(i,c[3],`<span class="num">${c[0]}</span><b>${c[1]}</b>${c[2]?`<small>${c[2]}</small>`:''}`,.05)).join('')+'</div>';
+const tall=x.k=='c'||x.k=='tb'||(x.k=='y'&&x.rows.length>3);
+return `<section class="sl${tall?' tall':''}" style="--acc:${x.a}">${b}</section>`}).join('');
+
+/* فقاعات الخلفية */
+document.getElementById('fx').innerHTML=Array.from({length:14},()=>{const s=6+Math.random()*24;
+ return `<span style="left:${(Math.random()*100).toFixed(1)}%;width:${s.toFixed(0)}px;height:${s.toFixed(0)}px;--x:${((Math.random()-.5)*90).toFixed(0)}px;animation-duration:${(16+Math.random()*18).toFixed(1)}s;animation-delay:-${(Math.random()*30).toFixed(1)}s"></span>`}).join('');
+
+const secs=[...document.querySelectorAll('.sl')];
+const nv=document.getElementById('nv');nv.innerHTML=secs.map((_,i)=>`<b role="button" tabindex="0" aria-label="انتقل للشريحة ${i+1}"></b>`).join('');
+[...nv.children].forEach((d,i)=>{const go=()=>secs[i].scrollIntoView({behavior:'smooth'});d.addEventListener('click',go);d.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
+const ease=t=>1-Math.pow(1-t,3);
+function count(el){if(!el.closest('.on'))return;const v=+el.dataset.v,d=dc(el.dataset.v),s=performance.now();(function st(n){if(!el.closest('.on'))return;const p=Math.min((n-s)/1800,1);el.textContent=el.dataset.raw?Math.round(v*ease(p)):f(v*ease(p),d);if(p<1)requestAnimationFrame(st)})(s)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{const t=e.target;
+if(e.isIntersecting){t.classList.add('on');t.querySelectorAll('.n').forEach(n=>setTimeout(()=>count(n),350))}
+else{t.classList.remove('on');t.querySelectorAll('.n').forEach(n=>n.textContent='0')}}),{threshold:.25,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.it,.row,.tbs,.pic,.txt,.tile,.yr,.chip,.prog').forEach(x=>io.observe(x));
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;
+document.documentElement.style.setProperty('--acc',getComputedStyle(t).getPropertyValue('--acc'));
+[...nv.children].forEach((d,i)=>d.classList.toggle('a',secs[i]===t))}),{rootMargin:'-45% 0px -45% 0px'});
+secs.forEach(x=>so.observe(x));
+const tall=secs.filter(t=>t.classList.contains('tall'));let mode='';
+function snapMode(){const h=innerHeight/2;const inT=tall.some(t=>{const r=t.getBoundingClientRect();return r.top<=h&&r.bottom>=h});const m=inT?'none':'y mandatory';if(m!==mode){mode=m;document.documentElement.style.scrollSnapType=m}}
+snapMode();
+addEventListener('scroll',()=>{snapMode();const d=document.documentElement;document.getElementById('pg').style.width=(scrollY/Math.max(1,d.scrollHeight-innerHeight)*100)+'%'},{passive:true});
+const ld=document.getElementById('ld');ld.classList.add('out');setTimeout(()=>ld.remove(),600);
+})();
+</script>
+</body>
+</html>
